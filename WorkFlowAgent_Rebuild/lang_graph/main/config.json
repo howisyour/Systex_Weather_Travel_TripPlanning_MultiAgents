@@ -1,0 +1,4 @@
+{
+    "tool_function_list": ["flight_info", "discount", "weather_info", "attraction_info"],
+    "type": [1, 1, 1, 0]
+}

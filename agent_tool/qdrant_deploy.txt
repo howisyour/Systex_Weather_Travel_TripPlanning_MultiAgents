@@ -1,0 +1,9 @@
+指令:
+docker pull qdrant/qdrant
+
+docker run -d \
+  --name n8n_qdrant_secure \
+  -p 6398:6333 \
+  -v "$(pwd)/qdrant_storage:/qdrant/storage" \
+  -e QDRANT__SERVICE__API_KEY="MySecret12345" \
+  qdrant/qdrant

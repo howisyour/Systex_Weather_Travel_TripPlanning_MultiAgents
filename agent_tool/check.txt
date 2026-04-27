@@ -1,0 +1,11 @@
+RequestBody formBody = new FormBody.Builder()
+                .add("grant_type", "client_credentials")
+                .add("client_id", CLIENT_ID)
+                .add("client_secret", CLIENT_SECRET)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(TOKEN_URL)
+                .post(formBody)
+                .addHeader("Content-Type", "application/x-www-form-urlencoded")
+                .build();
