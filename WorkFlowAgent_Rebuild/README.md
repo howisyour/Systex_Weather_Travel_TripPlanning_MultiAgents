@@ -23,7 +23,7 @@
 - **雙前端支援**：同時提供 FastAPI RESTful API 與 Gradio Web UI
 
 ## 📂 專案架構
-
+```
 WorkFlowAgent_Rebuild/
 ├── fastapi_app.py # FastAPI 主應用程式進入點
 ├── gradio_service.py # Gradio 前端服務
@@ -83,7 +83,7 @@ WorkFlowAgent_Rebuild/
 | **向量資料庫** | ChromaDB |
 | **Embedding** | Ollama Embeddings (nomic-embed-text) |
 | **模型載入** | HuggingFace Transformers |
-
+```
 ## 📦 安裝指南
 
 ### 前置需求
