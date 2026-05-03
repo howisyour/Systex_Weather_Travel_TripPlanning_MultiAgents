@@ -56,12 +56,12 @@ class TDXInternationalFlight:
 
         if request.DepartureTime:
             filter_list.append(
-                f"ScheduleDepartureTime le '{request.DepartureTime}'"
+                f"ScheduleDepartureTime le {request.DepartureTime}"
             )  # 出發時間（條件為小於等於）
 
         if request.ArrivalTime:
             filter_list.append(
-                f"ScheduleArrivalTime ge '{request.ArrivalTime}'"
+                f"ScheduleArrivalTime ge {request.ArrivalTime}"
             )  # 抵達時間（條件為大於等於）
 
         if request.DepartureAirportID:

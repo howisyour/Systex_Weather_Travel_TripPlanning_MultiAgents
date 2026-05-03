@@ -85,7 +85,14 @@ class SubGraph:
 
             # One-shot: if caller already provided a query (feedback) for this subgraph,
             # skip the template and proceed to get_user_input -> assistant.
-            if state.get("condition") == "direct_input" and str(state.get("feedback", "")).strip():
+            # IMPORTANT: do NOT skip when a ToolMessage is pending – it must be processed
+            # so that condition is set to "next_graph_or_end" and the graph ends correctly.
+            _last_msg = (state.get("messages") or [None])[-1]
+            if (
+                state.get("condition") == "direct_input"
+                and str(state.get("feedback", "")).strip()
+                and not isinstance(_last_msg, ToolMessage)
+            ):
                 return {
                     "messages": [AIMessage(content="")],
                     "tool_use": state["tool_use"],
